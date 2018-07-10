@@ -1,0 +1,219 @@
+###############################################################################
+#
+# IAR ELF Linker V8.30.1.114/W32 for ARM                  27/Jun/2018  12:52:02
+# Copyright 2007-2018 IAR Systems AB.
+#
+#    Output file  =  D:\IAR\Temlate\Prroject1\Debug\Exe\Project.out
+#    Map file     =  D:\IAR\Temlate\Prroject1\Debug\List\Project.map
+#    Command line =  
+#        -f C:\Users\1510379\AppData\Local\Temp\EW609F.tmp
+#        (D:\IAR\Temlate\Prroject1\Debug\Obj\main.o
+#        D:\IAR\Temlate\Prroject1\Debug\Obj\startup_stm32f030.o
+#        D:\IAR\Temlate\Prroject1\Debug\Obj\stm32f0xx_adc.o
+#        D:\IAR\Temlate\Prroject1\Debug\Obj\stm32f0xx_can.o
+#        D:\IAR\Temlate\Prroject1\Debug\Obj\stm32f0xx_cec.o
+#        D:\IAR\Temlate\Prroject1\Debug\Obj\stm32f0xx_comp.o
+#        D:\IAR\Temlate\Prroject1\Debug\Obj\stm32f0xx_crc.o
+#        D:\IAR\Temlate\Prroject1\Debug\Obj\stm32f0xx_crs.o
+#        D:\IAR\Temlate\Prroject1\Debug\Obj\stm32f0xx_dac.o
+#        D:\IAR\Temlate\Prroject1\Debug\Obj\stm32f0xx_dbgmcu.o
+#        D:\IAR\Temlate\Prroject1\Debug\Obj\stm32f0xx_dma.o
+#        D:\IAR\Temlate\Prroject1\Debug\Obj\stm32f0xx_exti.o
+#        D:\IAR\Temlate\Prroject1\Debug\Obj\stm32f0xx_flash.o
+#        D:\IAR\Temlate\Prroject1\Debug\Obj\stm32f0xx_gpio.o
+#        D:\IAR\Temlate\Prroject1\Debug\Obj\stm32f0xx_i2c.o
+#        D:\IAR\Temlate\Prroject1\Debug\Obj\stm32f0xx_it.o
+#        D:\IAR\Temlate\Prroject1\Debug\Obj\stm32f0xx_iwdg.o
+#        D:\IAR\Temlate\Prroject1\Debug\Obj\stm32f0xx_misc.o
+#        D:\IAR\Temlate\Prroject1\Debug\Obj\stm32f0xx_pwr.o
+#        D:\IAR\Temlate\Prroject1\Debug\Obj\stm32f0xx_rcc.o
+#        D:\IAR\Temlate\Prroject1\Debug\Obj\stm32f0xx_rtc.o
+#        D:\IAR\Temlate\Prroject1\Debug\Obj\stm32f0xx_spi.o
+#        D:\IAR\Temlate\Prroject1\Debug\Obj\stm32f0xx_syscfg.o
+#        D:\IAR\Temlate\Prroject1\Debug\Obj\stm32f0xx_tim.o
+#        D:\IAR\Temlate\Prroject1\Debug\Obj\stm32f0xx_usart.o
+#        D:\IAR\Temlate\Prroject1\Debug\Obj\stm32f0xx_wwdg.o
+#        D:\IAR\Temlate\Prroject1\Debug\Obj\system_stm32f0xx.o
+#        --no_out_extension -o D:\IAR\Temlate\Prroject1\Debug\Exe\Project.out
+#        --map D:\IAR\Temlate\Prroject1\Debug\List\Project.map --config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.1\arm\CONFIG\generic_cortex.icf" --semihosting --entry
+#        __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because no calls to memory allocation
+functions were found in the application outside of system library
+functions, and there are calls to deallocation functions in the
+application.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at 0x0 { ro section .intvec };
+"P1":  place in [from 0x0 to 0x7'ffff] { ro };
+define block CSTACK with size = 1K, alignment = 8 { };
+define block PROC_STACK with size = 0M, alignment = 8 { };
+define block HEAP with size = 2K, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2000'ffff] {
+          rw, block CSTACK, block PROC_STACK, block HEAP };
+
+No sections matched the following patterns:
+
+  rw  in "P2"
+
+
+  Section   Kind         Address   Size  Object
+  -------   ----         -------   ----  ------
+"A0":                              0xb4
+  .intvec   ro code          0x0   0xb4  startup_stm32f030.o [1]
+                          - 0xb4   0xb4
+
+"P1":                             0x210
+  .text     ro code         0xb4  0x114  system_stm32f0xx.o [1]
+  .text     ro code        0x1c8   0x3c  startup_stm32f030.o [1]
+  .text     ro code        0x204   0x1e  cmain.o [3]
+  .text     ro code        0x222    0x4  low_level_init.o [2]
+  .text     ro code        0x226    0x4  main.o [1]
+  .text     ro code        0x22a    0x4  exit.o [2]
+  .text     ro code        0x22e    0xa  stm32f0xx_it.o [1]
+  .text     ro code        0x238    0xa  cexit.o [3]
+  .text     ro code        0x244   0x14  exit.o [4]
+  .text     ro code        0x258    0xc  cstartup_M.o [3]
+  .text     ro code        0x264    0x4  startup_stm32f030.o [1]
+  .text     ro code        0x268    0x4  startup_stm32f030.o [1]
+  .text     ro code        0x26c    0x4  startup_stm32f030.o [1]
+  .text     ro code        0x270    0x4  startup_stm32f030.o [1]
+  .text     ro code        0x274    0x4  startup_stm32f030.o [1]
+  .text     ro code        0x278    0x4  startup_stm32f030.o [1]
+  .text     ro code        0x27c    0x4  startup_stm32f030.o [1]
+  .text     ro code        0x280    0x4  startup_stm32f030.o [1]
+  .text     ro code        0x284    0x4  startup_stm32f030.o [1]
+  .text     ro code        0x288    0x4  startup_stm32f030.o [1]
+  .text     ro code        0x28c    0x4  startup_stm32f030.o [1]
+  .text     ro code        0x290    0x4  startup_stm32f030.o [1]
+  .text     ro code        0x294    0x4  startup_stm32f030.o [1]
+  .text     ro code        0x298    0x4  startup_stm32f030.o [1]
+  .text     ro code        0x29c    0x4  startup_stm32f030.o [1]
+  .text     ro code        0x2a0    0x4  startup_stm32f030.o [1]
+  .text     ro code        0x2a4    0x4  startup_stm32f030.o [1]
+  .text     ro code        0x2a8    0x4  startup_stm32f030.o [1]
+  .text     ro code        0x2ac    0x4  startup_stm32f030.o [1]
+  .text     ro code        0x2b0    0x4  startup_stm32f030.o [1]
+  .text     ro code        0x2b4    0x4  startup_stm32f030.o [1]
+  .text     ro code        0x2b8    0x4  startup_stm32f030.o [1]
+  .text     ro code        0x2bc    0x4  startup_stm32f030.o [1]
+  .text     ro code        0x2c0    0x4  startup_stm32f030.o [1]
+                         - 0x2c4  0x210
+
+"P2":                             0x400
+  CSTACK             0x2000'0000  0x400  <Block>
+    CSTACK  uninit   0x2000'0000  0x400  <Block tail>
+                   - 0x2000'0400  0x400
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+        0x2c4     0x7'ffff  0x7'fd3c
+  0x2000'0400  0x2000'ffff    0xfc00
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module               ro code  rw data
+    ------               -------  -------
+command line/config:
+    -------------------------------------
+    Total:
+
+D:\IAR\Temlate\Prroject1\Debug\Obj: [1]
+    main.o                     4
+    startup_stm32f030.o      336
+    stm32f0xx_it.o            10
+    system_stm32f0xx.o       276
+    -------------------------------------
+    Total:                   626
+
+dl7M_tln.a: [2]
+    exit.o                     4
+    low_level_init.o           4
+    -------------------------------------
+    Total:                     8
+
+rt7M_tl.a: [3]
+    cexit.o                   10
+    cmain.o                   30
+    cstartup_M.o              12
+    -------------------------------------
+    Total:                    52
+
+shb_l.a: [4]
+    exit.o                    20
+    -------------------------------------
+    Total:                    20
+
+    Gaps                       2
+    Linker created                  1 024
+-----------------------------------------
+    Grand Total:             708    1 024
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                     Address  Size  Type      Object
+-----                     -------  ----  ----      ------
+?main                       0x205        Code  Gb  cmain.o [3]
+CSTACK$$Base          0x2000'0000         --   Gb  - Linker created -
+CSTACK$$Limit         0x2000'0400         --   Gb  - Linker created -
+HardFault_Handler           0x231   0x2  Code  Gb  stm32f0xx_it.o [1]
+NMI_Handler                 0x22f   0x2  Code  Gb  stm32f0xx_it.o [1]
+PendSV_Handler              0x235   0x2  Code  Gb  stm32f0xx_it.o [1]
+Region$$Table$$Base           0x0         --   Gb  - Linker created -
+Region$$Table$$Limit          0x0         --   Gb  - Linker created -
+SVC_Handler                 0x233   0x2  Code  Gb  stm32f0xx_it.o [1]
+SetSysClock                 0x10d  0x92  Code  Lc  system_stm32f0xx.o [1]
+SysTick_Handler             0x237   0x2  Code  Gb  stm32f0xx_it.o [1]
+SystemInit                   0xb5  0x58  Code  Gb  system_stm32f0xx.o [1]
+__cmain                     0x205        Code  Gb  cmain.o [3]
+__exit                      0x245  0x14  Code  Gb  exit.o [4]
+__iar_program_start         0x259        Code  Gb  cstartup_M.o [3]
+__low_level_init            0x223   0x4  Code  Gb  low_level_init.o [2]
+__vector_table                0x0        Data  Gb  startup_stm32f030.o [1]
+_call_main                  0x211        Code  Gb  cmain.o [3]
+_exit                       0x239        Code  Gb  cexit.o [3]
+_main                       0x21f        Code  Gb  cmain.o [3]
+exit                        0x22b   0x4  Code  Gb  exit.o [2]
+main                        0x227   0x4  Code  Gb  main.o [1]
+
+
+[1] = D:\IAR\Temlate\Prroject1\Debug\Obj
+[2] = dl7M_tln.a
+[3] = rt7M_tl.a
+[4] = shb_l.a
+
+    708 bytes of readonly  code memory
+  1 024 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
