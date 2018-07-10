@@ -1,0 +1,299 @@
+###############################################################################
+#
+# IAR ELF Linker V8.30.1.114/W32 for ARM                  03/Jul/2018  10:45:31
+# Copyright 2007-2018 IAR Systems AB.
+#
+#    Output file  =  D:\IAR\usart\Prroject1\Debug\Exe\Project.out
+#    Map file     =  D:\IAR\usart\Prroject1\Debug\List\Project.map
+#    Command line =  
+#        -f C:\Users\1510379\AppData\Local\Temp\EWBC57.tmp
+#        (D:\IAR\usart\Prroject1\Debug\Obj\main.o
+#        D:\IAR\usart\Prroject1\Debug\Obj\startup_stm32f030.o
+#        D:\IAR\usart\Prroject1\Debug\Obj\stm32f0xx_adc.o
+#        D:\IAR\usart\Prroject1\Debug\Obj\stm32f0xx_can.o
+#        D:\IAR\usart\Prroject1\Debug\Obj\stm32f0xx_cec.o
+#        D:\IAR\usart\Prroject1\Debug\Obj\stm32f0xx_comp.o
+#        D:\IAR\usart\Prroject1\Debug\Obj\stm32f0xx_crc.o
+#        D:\IAR\usart\Prroject1\Debug\Obj\stm32f0xx_crs.o
+#        D:\IAR\usart\Prroject1\Debug\Obj\stm32f0xx_dac.o
+#        D:\IAR\usart\Prroject1\Debug\Obj\stm32f0xx_dbgmcu.o
+#        D:\IAR\usart\Prroject1\Debug\Obj\stm32f0xx_dma.o
+#        D:\IAR\usart\Prroject1\Debug\Obj\stm32f0xx_exti.o
+#        D:\IAR\usart\Prroject1\Debug\Obj\stm32f0xx_flash.o
+#        D:\IAR\usart\Prroject1\Debug\Obj\stm32f0xx_gpio.o
+#        D:\IAR\usart\Prroject1\Debug\Obj\stm32f0xx_i2c.o
+#        D:\IAR\usart\Prroject1\Debug\Obj\stm32f0xx_it.o
+#        D:\IAR\usart\Prroject1\Debug\Obj\stm32f0xx_iwdg.o
+#        D:\IAR\usart\Prroject1\Debug\Obj\stm32f0xx_misc.o
+#        D:\IAR\usart\Prroject1\Debug\Obj\stm32f0xx_pwr.o
+#        D:\IAR\usart\Prroject1\Debug\Obj\stm32f0xx_rcc.o
+#        D:\IAR\usart\Prroject1\Debug\Obj\stm32f0xx_rtc.o
+#        D:\IAR\usart\Prroject1\Debug\Obj\stm32f0xx_spi.o
+#        D:\IAR\usart\Prroject1\Debug\Obj\stm32f0xx_syscfg.o
+#        D:\IAR\usart\Prroject1\Debug\Obj\stm32f0xx_tim.o
+#        D:\IAR\usart\Prroject1\Debug\Obj\stm32f0xx_usart.o
+#        D:\IAR\usart\Prroject1\Debug\Obj\stm32f0xx_wwdg.o
+#        D:\IAR\usart\Prroject1\Debug\Obj\system_stm32f0xx.o
+#        D:\IAR\usart\Prroject1\Debug\Obj\usart.o --no_out_extension -o
+#        D:\IAR\usart\Prroject1\Debug\Exe\Project.out --map
+#        D:\IAR\usart\Prroject1\Debug\List\Project.map --config "C:\Program
+#        Files (x86)\IAR Systems\Embedded Workbench
+#        8.1\arm\config\linker\ST\stm32f030x4.icf" --semihosting --entry
+#        __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because no calls to memory allocation
+functions were found in the application outside of system library
+functions, and there are calls to deallocation functions in the
+application.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at 0x800'0000 { ro section .intvec };
+"P1":  place in [from 0x800'0000 to 0x800'3fff] { ro };
+define block CSTACK with size = 1K, alignment = 8 { };
+define block HEAP with size = 1K, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2000'0fff] {
+          rw, block CSTACK, block HEAP };
+initialize by copy { rw };
+
+  Section            Kind         Address   Size  Object
+  -------            ----         -------   ----  ------
+"A0":                                       0xb4
+  .intvec            ro code   0x800'0000   0xb4  startup_stm32f030.o [1]
+                             - 0x800'00b4   0xb4
+
+"P1":                                      0x988
+  .text              ro code   0x800'00b4  0x214  stm32f0xx_rcc.o [1]
+  .text              ro code   0x800'02c8   0xae  I32DivModFast.o [3]
+  .text              ro code   0x800'0376    0x2  startup_stm32f030.o [1]
+  .text              ro code   0x800'0378    0x2  IntDivZer.o [3]
+  .text              ro code   0x800'037a    0x2  startup_stm32f030.o [1]
+  .text              ro code   0x800'037c  0x160  stm32f0xx_usart.o [1]
+  .text              ro code   0x800'04dc  0x128  system_stm32f0xx.o [1]
+  .text              ro code   0x800'0604  0x11c  usart.o [1]
+  .text              ro code   0x800'0720  0x102  stm32f0xx_gpio.o [1]
+  .text              ro code   0x800'0822    0x2  startup_stm32f030.o [1]
+  .text              ro code   0x800'0824   0x70  stm32f0xx_misc.o [1]
+  .text              ro code   0x800'0894   0x3c  startup_stm32f030.o [1]
+  .text              ro code   0x800'08d0   0x3c  zero_init3.o [3]
+  .text              ro code   0x800'090c   0x30  copy_init3.o [3]
+  .text              ro code   0x800'093c   0x28  data_init.o [3]
+  .iar.init_table    const     0x800'0964   0x24  - Linker created -
+  .text              ro code   0x800'0988   0x1e  cmain.o [3]
+  .text              ro code   0x800'09a6    0x4  low_level_init.o [2]
+  .text              ro code   0x800'09aa    0x2  startup_stm32f030.o [1]
+  .text              ro code   0x800'09ac   0x1c  main.o [1]
+  .text              ro code   0x800'09c8    0x8  exit.o [2]
+  .text              ro code   0x800'09d0    0xa  cexit.o [3]
+  .text              ro code   0x800'09da    0x2  startup_stm32f030.o [1]
+  .text              ro code   0x800'09dc   0x14  exit.o [4]
+  Initializer bytes  const     0x800'09f0   0x10  <for P2-1>
+  .text              ro code   0x800'0a00    0xc  stm32f0xx_it.o [1]
+  .text              ro code   0x800'0a0c    0xc  cstartup_M.o [3]
+  .text              ro code   0x800'0a18    0x2  startup_stm32f030.o [1]
+  .text              ro code   0x800'0a1a    0x2  startup_stm32f030.o [1]
+  .text              ro code   0x800'0a1c    0x2  startup_stm32f030.o [1]
+  .text              ro code   0x800'0a1e    0x2  startup_stm32f030.o [1]
+  .text              ro code   0x800'0a20    0x2  startup_stm32f030.o [1]
+  .text              ro code   0x800'0a22    0x2  startup_stm32f030.o [1]
+  .text              ro code   0x800'0a24    0x2  startup_stm32f030.o [1]
+  .text              ro code   0x800'0a26    0x2  startup_stm32f030.o [1]
+  .text              ro code   0x800'0a28    0x2  startup_stm32f030.o [1]
+  .text              ro code   0x800'0a2a    0x2  startup_stm32f030.o [1]
+  .text              ro code   0x800'0a2c    0x2  startup_stm32f030.o [1]
+  .text              ro code   0x800'0a2e    0x2  startup_stm32f030.o [1]
+  .text              ro code   0x800'0a30    0x2  startup_stm32f030.o [1]
+  .text              ro code   0x800'0a32    0x2  startup_stm32f030.o [1]
+  .text              ro code   0x800'0a34    0x2  startup_stm32f030.o [1]
+  .text              ro code   0x800'0a36    0x2  startup_stm32f030.o [1]
+  .text              ro code   0x800'0a38    0x2  startup_stm32f030.o [1]
+  .text              ro code   0x800'0a3a    0x2  startup_stm32f030.o [1]
+  .rodata            const     0x800'0a3c    0x0  zero_init3.o [3]
+  .rodata            const     0x800'0a3c    0x0  copy_init3.o [3]
+                             - 0x800'0a3c  0x988
+
+"P2", part 1 of 3:                          0x10
+  P2-1                        0x2000'0000   0x10  <Init block>
+    .data            inited   0x2000'0000   0x10  stm32f0xx_rcc.o [1]
+                            - 0x2000'0010   0x10
+
+"P2", part 2 of 3:                         0x7d4
+  .bss               zero     0x2000'0010  0x7d0  usart.o [1]
+  .bss               zero     0x2000'07e0    0x2  usart.o [1]
+  .bss               zero     0x2000'07e2    0x2  usart.o [1]
+                            - 0x2000'07e4  0x7d4
+
+"P2", part 3 of 3:                         0x400
+  CSTACK                      0x2000'07e8  0x400  <Block>
+    CSTACK           uninit   0x2000'07e8  0x400  <Block tail>
+                            - 0x2000'0be8  0x400
+
+Unused ranges:
+
+         From           To    Size
+         ----           --    ----
+   0x800'0a3c   0x800'3fff  0x35c4
+  0x2000'07e4  0x2000'07e7     0x4
+  0x2000'0be8  0x2000'0fff   0x418
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x7d4:
+          0x2000'0010  0x7d4
+
+Copy (__iar_copy_init3)
+    1 source range, total size 0x10:
+           0x800'09f0   0x10
+    1 destination range, total size 0x10:
+          0x2000'0000   0x10
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module               ro code  ro data  rw data
+    ------               -------  -------  -------
+command line/config:
+    ----------------------------------------------
+    Total:
+
+D:\IAR\usart\Prroject1\Debug\Obj: [1]
+    main.o                    28
+    startup_stm32f030.o      286
+    stm32f0xx_gpio.o         258
+    stm32f0xx_it.o            12
+    stm32f0xx_misc.o         112
+    stm32f0xx_rcc.o          532       16       16
+    stm32f0xx_usart.o        352
+    system_stm32f0xx.o       296
+    usart.o                  284             2 004
+    ----------------------------------------------
+    Total:                 2 160       16    2 020
+
+dl6M_tlf.a: [2]
+    exit.o                     8
+    low_level_init.o           4
+    ----------------------------------------------
+    Total:                    12
+
+rt6M_tl.a: [3]
+    I32DivModFast.o          174
+    IntDivZer.o                2
+    cexit.o                   10
+    cmain.o                   30
+    copy_init3.o              48
+    cstartup_M.o              12
+    data_init.o               40
+    zero_init3.o              60
+    ----------------------------------------------
+    Total:                   376
+
+shb_l.a: [4]
+    exit.o                    20
+    ----------------------------------------------
+    Total:                    20
+
+    Linker created                     36    1 024
+--------------------------------------------------
+    Grand Total:           2 568       52    3 044
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+.iar.init_table$$Base    0x800'0964          --   Gb  - Linker created -
+.iar.init_table$$Limit   0x800'0988          --   Gb  - Linker created -
+?main                    0x800'0989         Code  Gb  cmain.o [3]
+APBAHBPrescTable        0x2000'0000   0x10  Data  Lc  stm32f0xx_rcc.o [1]
+CSTACK$$Base            0x2000'07e8          --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'0be8          --   Gb  - Linker created -
+GPIO_Init                0x800'0721   0xa2  Code  Gb  stm32f0xx_gpio.o [1]
+GPIO_PinAFConfig         0x800'07c3   0x60  Code  Gb  stm32f0xx_gpio.o [1]
+HardFault_Handler        0x800'0a03    0x4  Code  Gb  stm32f0xx_it.o [1]
+NMI_Handler              0x800'0a01    0x2  Code  Gb  stm32f0xx_it.o [1]
+NVIC_Init                0x800'0825   0x62  Code  Gb  stm32f0xx_misc.o [1]
+PendSV_Handler           0x800'0a09    0x2  Code  Gb  stm32f0xx_it.o [1]
+RCC_AHBPeriphClockCmd    0x800'0269   0x1c  Code  Gb  stm32f0xx_rcc.o [1]
+RCC_APB2PeriphClockCmd   0x800'0285   0x1c  Code  Gb  stm32f0xx_rcc.o [1]
+RCC_GetClocksFreq        0x800'00b5  0x1b0  Code  Gb  stm32f0xx_rcc.o [1]
+Region$$Table$$Base      0x800'0964          --   Gb  - Linker created -
+Region$$Table$$Limit     0x800'0988          --   Gb  - Linker created -
+SVC_Handler              0x800'0a07    0x2  Code  Gb  stm32f0xx_it.o [1]
+SetSysClock              0x800'0535   0x98  Code  Lc  system_stm32f0xx.o [1]
+SysTick_Handler          0x800'0a0b    0x2  Code  Gb  stm32f0xx_it.o [1]
+SystemInit               0x800'04dd   0x58  Code  Gb  system_stm32f0xx.o [1]
+USART1_IRQHandler        0x800'06e1   0x2a  Code  Gb  usart.o [1]
+USART_ClearFlag          0x800'04d9    0x4  Code  Gb  stm32f0xx_usart.o [1]
+USART_Cmd                0x800'043b   0x1c  Code  Gb  stm32f0xx_usart.o [1]
+USART_GetFlagStatus      0x800'04c1   0x18  Code  Gb  stm32f0xx_usart.o [1]
+USART_ITConfig           0x800'0485   0x3c  Code  Gb  stm32f0xx_usart.o [1]
+USART_Init               0x800'037d   0xbe  Code  Gb  stm32f0xx_usart.o [1]
+USART_ReceiveData        0x800'046d    0x8  Code  Gb  stm32f0xx_usart.o [1]
+USART_SendData           0x800'0465    0x8  Code  Gb  stm32f0xx_usart.o [1]
+__ICFEDIT_region_RAM_end__ {Abs}
+                        0x2000'0fff         Data  Gb  <internal module>
+__ICFEDIT_region_RAM_start__ {Abs}
+                        0x2000'0000         Data  Gb  <internal module>
+__aeabi_idiv0            0x800'0379         Code  Gb  IntDivZer.o [3]
+__aeabi_uidiv            0x800'02c9         Code  Gb  I32DivModFast.o [3]
+__aeabi_uidivmod         0x800'02c9         Code  Gb  I32DivModFast.o [3]
+__cmain                  0x800'0989         Code  Gb  cmain.o [3]
+__exit                   0x800'09dd   0x14  Code  Gb  exit.o [4]
+__iar_copy_init3         0x800'090d   0x30  Code  Gb  copy_init3.o [3]
+__iar_data_init3         0x800'093d   0x28  Code  Gb  data_init.o [3]
+__iar_program_start      0x800'0a0d         Code  Gb  cstartup_M.o [3]
+__iar_zero_init3         0x800'08d1   0x3c  Code  Gb  zero_init3.o [3]
+__low_level_init         0x800'09a7    0x4  Code  Gb  low_level_init.o [2]
+__vector_table           0x800'0000         Data  Gb  startup_stm32f030.o [1]
+_call_main               0x800'0995         Code  Gb  cmain.o [3]
+_exit                    0x800'09d1         Code  Gb  cexit.o [3]
+_main                    0x800'09a3         Code  Gb  cmain.o [3]
+a                       0x2000'07e2    0x2  Data  Gb  usart.o [1]
+exit                     0x800'09c9    0x8  Code  Gb  exit.o [2]
+i                       0x2000'07e0    0x2  Data  Gb  usart.o [1]
+main                     0x800'09ad   0x1c  Code  Gb  main.o [1]
+usart_config             0x800'0605   0xa0  Code  Gb  usart.o [1]
+usart_read               0x800'06a5   0x3c  Code  Gb  usart.o [1]
+value                   0x2000'0010  0x7d0  Data  Gb  usart.o [1]
+
+
+[1] = D:\IAR\usart\Prroject1\Debug\Obj
+[2] = dl6M_tlf.a
+[3] = rt6M_tl.a
+[4] = shb_l.a
+
+  2 568 bytes of readonly  code memory
+     52 bytes of readonly  data memory
+  3 044 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
