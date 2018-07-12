@@ -29,7 +29,7 @@
 #include "stm32f0xx.h"
 #include "i2c.h"
 #include "MPU6050.h"
-
+#include "RTC.h"
 /** @addtogroup STM32F0xx_StdPeriph_Examples
 * @{
 */
@@ -45,12 +45,14 @@
 
 /* Private function prototypes -----------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
-
+//uint8_t bcd2dec(uint8_t num);
+//uint8_t dec2bcd(uint8_t num);
 /**
 * @brief  Main program.
 * @param  None
 * @retval None
 */
+
 int main(void)
 {
   //  /*!< At this stage the microcontroller clock setting is already configured, 
@@ -61,15 +63,30 @@ int main(void)
   //  */ 
   SystemInit();
   SystemCoreClockUpdate();
-  I2C_DeInit(I2C1);
+ // I2C_DeInit(I2C1);
   i2c_config();
-  uint16_t a;
-  
-  while(1)
-  {
-    a=MPU6050_AccelerationZ();
+//  uint8_t a[5];
+//  static uint8_t b;
+//  uint8_t f[2]={0x05,dec2bcd(8)};
+//  uint8_t c=0xd0;
+//  uint16_t addr=0x00;
+//   I2C_WriteByte(I2C1,c,f,2);
+//  while(1)
+//  {
+//   
+//   b=bcd2dec( I2C_ReadReg(I2C1,c,0x05,a,1));
+//   
+   //if(addr==0x07) addr=0x00;
+    //a=MPU6050_AccelerationZ();
    // for(uint16_t i=0;i<=1000000;i++)
     //{}
+  //}
+  uint16_t thoigian[7];
+ // settime(1,03,12,5,12,7,18);
+  while(1)
+  {
+    readtime(thoigian);
+    
   }
   
 } 

@@ -26,7 +26,7 @@ void i2c_config(void)
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz;
   GPIO_InitStructure.GPIO_OType = GPIO_OType_OD;
-  GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
+  GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
   GPIO_Init(GPIOA, &GPIO_InitStructure);
   
   I2C_InitTypeDef I2C_InitStructure;
@@ -86,8 +86,9 @@ uint8_t I2C_ReadReg(I2C_TypeDef *I2Cx,uint8_t SlaveAddr,uint8_t RegAddr,uint8_t 
   for(i=0;i<Length;i++)
   {
     TIMEOUT( I2C_GetFlagStatus(I2Cx,I2C_FLAG_RXNE)==RESET,1000);//wait until receive flag is set
-    if(Length>1) Data[i]=I2C_ReceiveData(I2Cx);//receive data
-    else SingleData=I2C_ReceiveData(I2Cx);
+    if(Length>1) 
+      Data[i]=I2C_ReceiveData(I2Cx);//receive data
+     else SingleData=I2C_ReceiveData(I2Cx);
   }
   TIMEOUT((I2C_GetFlagStatus(I2Cx,I2C_FLAG_STOPF)==RESET),1000);//wait until stop flag is set
   I2C_ClearFlag(I2Cx,I2C_FLAG_STOPF);

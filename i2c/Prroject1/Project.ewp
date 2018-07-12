@@ -2154,6 +2154,9 @@
             <name>$PROJ_DIR$\MPU6050.c</name>
         </file>
         <file>
+            <name>$PROJ_DIR$\RTC.c</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\stm32f0xx_it.c</name>
         </file>
     </group>
